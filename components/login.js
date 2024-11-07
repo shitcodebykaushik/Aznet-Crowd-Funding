@@ -8,11 +8,14 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
+      {/* Logo Section */}
       <Image source={{ uri: 'https://example.com/logo.png' }} style={styles.logo} />
-      
+
+      {/* Welcome Text */}
       <Text style={styles.title}>Welcome Back!</Text>
       <Text style={styles.subtitle}>Login to your account</Text>
 
+      {/* Email Input */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -22,6 +25,7 @@ const LoginScreen = () => {
         />
       </View>
 
+      {/* Password Input */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -31,10 +35,12 @@ const LoginScreen = () => {
         />
       </View>
 
+      {/* Forgot Password Button */}
       <TouchableOpacity style={styles.forgotPasswordButton}>
         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
       </TouchableOpacity>
 
+      {/* Login Button */}
       <TouchableOpacity
         style={styles.loginButton}
         onPress={() => navigation.reset({
@@ -45,6 +51,7 @@ const LoginScreen = () => {
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
+      {/* Signup Option */}
       <View style={styles.signupContainer}>
         <Text style={styles.signupText}>Don't have an account?</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
@@ -58,19 +65,19 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f8f8f8',
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     marginBottom: 30,
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
+    fontSize: 24,
+    fontWeight: '600',
     color: '#333',
     marginBottom: 5,
   },
@@ -81,11 +88,13 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '100%',
-    backgroundColor: '#f5f5f5',
-    borderRadius: 10,
+    backgroundColor: '#ffffff',
+    borderRadius: 8,
     marginBottom: 15,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderColor: '#ddd',
+    borderWidth: 1,
   },
   input: {
     fontSize: 16,
@@ -96,34 +105,36 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   forgotPasswordText: {
-    color: '#1e88e5',
+    color: '#FF5252',
     fontSize: 14,
+    fontWeight: '600',
   },
   loginButton: {
     width: '100%',
-    backgroundColor: '#4CAF50',
-    borderRadius: 10,
+    backgroundColor: '#FF5252',
+    borderRadius: 8,
     paddingVertical: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginVertical: 20,
   },
   loginButtonText: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 16,
+    fontWeight: '600',
   },
   signupContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   signupText: {
-    color: '#666',
-    fontSize: 16,
+    color: '#888',
+    fontSize: 14,
   },
   signupLink: {
-    color: '#1e88e5',
-    fontSize: 16,
+    color: '#FF5252',
+    fontSize: 14,
+    fontWeight: '600',
     marginLeft: 5,
   },
 });

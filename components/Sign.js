@@ -9,9 +9,8 @@ const SignupScreen = () => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: 'https://example.com/logo.png' }} style={styles.logo} />
-      
+
       <Text style={styles.title}>Create Account</Text>
-      <Text style={styles.subtitle}>Sign up to get started</Text>
 
       <View style={styles.inputContainer}>
         <TextInput
@@ -33,16 +32,16 @@ const SignupScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Password"
+          placeholder="Phone Number"
           placeholderTextColor="#888"
-          secureTextEntry
+          keyboardType="phone-pad"
         />
       </View>
 
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Confirm Password"
+          placeholder="Password"
           placeholderTextColor="#888"
           secureTextEntry
         />
@@ -55,7 +54,7 @@ const SignupScreen = () => {
           routes: [{ name: 'HomeTab' }],
         })}
       >
-        <Text style={styles.signupButtonText}>Sign Up</Text>
+        <Text style={styles.signupButtonText}>Create Account</Text>
       </TouchableOpacity>
 
       <View style={styles.loginContainer}>
@@ -71,34 +70,31 @@ const SignupScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f8f8f8',
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     marginBottom: 30,
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
+    fontSize: 24,
+    fontWeight: '600',
     color: '#333',
-    marginBottom: 5,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666',
     marginBottom: 30,
   },
   inputContainer: {
     width: '100%',
-    backgroundColor: '#f5f5f5',
-    borderRadius: 10,
+    backgroundColor: '#ffffff',
+    borderRadius: 8,
     marginBottom: 15,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderColor: '#ddd',
+    borderWidth: 1,
   },
   input: {
     fontSize: 16,
@@ -106,30 +102,31 @@ const styles = StyleSheet.create({
   },
   signupButton: {
     width: '100%',
-    backgroundColor: '#4CAF50',
-    borderRadius: 10,
+    backgroundColor: '#FF5252',
+    borderRadius: 8,
     paddingVertical: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginVertical: 20,
   },
   signupButtonText: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 16,
+    fontWeight: '600',
   },
   loginContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   loginText: {
-    color: '#666',
-    fontSize: 16,
+    color: '#888',
+    fontSize: 14,
   },
   loginLink: {
-    color: '#1e88e5',
-    fontSize: 16,
+    color: '#FF5252',
+    fontSize: 14,
     marginLeft: 5,
+    fontWeight: '600',
   },
 });
 

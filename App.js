@@ -9,8 +9,7 @@ import SignupScreen from './components/Sign';
 import LoginScreen from './components/login';
 import HomeScreen from './components/HomeScreen';
 import CampaignPage from './components/campign';
-import DonateGoodsPage from './components/DonateGoodsPage';
-import NotificationsScreen from './components/Notification';
+import TravelScreen from './components/TravelScreen'; // Import the new Travel screen
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -28,8 +27,6 @@ const HomeStack = () => (
   <Stack.Navigator>
     <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
     <Stack.Screen name="Campaign" component={CampaignPage} options={{ title: 'Campaign Details' }} />
-    <Stack.Screen name="DonateGoods" component={DonateGoodsPage} options={{ title: 'Donate Goods' }} />
-    <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Notifications' }} />
   </Stack.Navigator>
 );
 
@@ -46,7 +43,16 @@ const MainTabs = () => (
         ),
       }}
     />
-    {/* Add other Tab Screens here if needed */}
+    <Tab.Screen
+      name="Travel"
+      component={TravelScreen}
+      options={{
+        tabBarLabel: 'Travel',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="airplane-outline" color={color} size={size} />
+        ),
+      }}
+    />
   </Tab.Navigator>
 );
 
